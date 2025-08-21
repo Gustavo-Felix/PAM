@@ -1,4 +1,4 @@
-const db = require('./conf/autenticacao.js');
+const db = require('./conf/auth.js');
 const express = require('express');
 let bodyParser = require('body-parser');
 let cors = require('cors');
