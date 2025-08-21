@@ -33,8 +33,37 @@ app.get('/clientes/:id', async (req, res) => {
   const id = req.params.id;
   const results = await db.selectById(id);
   console.log(results);
-  res.json(results)
-})
+  res.json(results);
+});
+
+app.post('/cliente', async (req, res) => {
+  const name = req.body.name;
+  const age = req.body.age;
+  const uf = req.body.uf;
+
+  const results = await db.insertCliente(name, age, uf);
+  console.log(results);
+  res.json(results);
+});
+
+app.put('/clientes/:id', async (req, res) => {
+  const id = req.params.id;
+  const name = req.body.name;
+  const age = req.body.age;
+  const uf = req.body.uf;
+
+  const results = await db.updateCliente(name, age, uf, id);
+  console.log(results);
+  res.json(results);
+});
+
+app.delete('/cliente/:id', async (req, res) => {
+  const id = req.params.id;
+
+  const results = await db.deleteById(id);
+  console.log(results);
+  res.json(results);
+});
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);

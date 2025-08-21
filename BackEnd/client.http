@@ -1,0 +1,34 @@
+@baseUrl = http://localhost:3000
+@id = 1
+
+GET {{baseUrl}}/clientes
+
+###
+
+GET {{baseUrl}}/clientes/{{id}}
+
+###
+
+POST {{baseUrl}}/cliente
+Content-Type: application/json
+
+{
+    "name": "Bruna",
+    "age": 21,
+    "uf": "SP"
+}
+
+###
+
+PUT {{baseUrl}}/clientes/{{id}}
+Content-Type: application/json
+
+{
+    "name": "GustavoTeste",
+    "age": 21,
+    "uf": "SP"
+}
+
+###
+
+DELETE {{baseUrl}}/cliente/{{id}}
