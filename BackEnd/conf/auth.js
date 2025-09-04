@@ -1,9 +1,11 @@
 "use strict";
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const cn = mysql.createConnection({
     host: 'localhost',
-    user:'root',
-   database: 'nodemysql'
+    port: 3306,
+    user:'root',   
+    password:'#26072007#',
+    database: 'nodemysql'
 });
  // Função para conectar ao banco de dados
 const connectToDatabase = () => {
@@ -98,7 +100,7 @@ async function updateCliente(Nome, Idade, UF,ID ) {
 }   
 
 
-// connectToDatabase();
+connectToDatabase();
 // //insertCliente('Sofia', 18, 'SP');
 // selectFull();
 // //deleteById(1);

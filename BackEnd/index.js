@@ -1,8 +1,8 @@
 const db = require('./conf/auth.js');
 const express = require('express');
-let bodyParser = require('body-parser');
-let cors = require('cors');
-let methodOvirride = require('method-override');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const methodOvirride = require('method-override');
 const app = express();
 const port = 3000;
 
@@ -18,13 +18,15 @@ app.use((req, resp, next) => {
   next()
 });
 
+app.use(cors())
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 
 //ROTEAMENTO RAIZ
 app.get('/clientes', async (req, res) => {
-  const results =  await db.selectFull();
+  const results = await db.selectFull();
   console.log(results);
   res.json(results);
 });
