@@ -3,8 +3,8 @@ const mysql = require('mysql2');
 const cn = mysql.createConnection({
     host: 'localhost',
     port: 3306,
-    user:'root',   
-    password:'#26072007#',
+    user:'SEU-USER',   
+    password:'SUA-SENHA',
     database: 'nodemysql'
 });
  // Função para conectar ao banco de dados
